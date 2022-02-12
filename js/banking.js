@@ -42,25 +42,28 @@ document.getElementById('deposit-button').addEventListener('click', function () 
     // const depositAmount = parseFloat(depositAmountText);
 
     const depositAmount = getInputValue('deposit-input');
+    if (depositAmount > 0) {
+        updateTotalField("deposit-total", depositAmount);
+        updateBalance(depositAmount, true);
+    }
 
-    // get and update deposit total ////
-
-    // const depositTotal = document.getElementById('deposit-total');
-    // const depositTotalText = depositTotal.innerText;
-    // const previousDepositTotal = parseFloat(depositTotalText);
-
-    // depositTotal.innerText = previousDepositTotal + depositAmount;
-    updateTotalField("deposit-total", depositAmount);
-
-    // update balance ////
-
-    /*  const balanceTotal = document.getElementById('balance-total');
-     const balanceTotalText = balanceTotal.innerText;
-     const previousBalanceTotal = parseFloat(balanceTotalText);
-    balanceTotal.innerText = previousBalanceTotal + depositAmount;
-  */
-    updateBalance(depositAmount, true);
 });
+// get and update deposit total ////
+
+// const depositTotal = document.getElementById('deposit-total');
+// const depositTotalText = depositTotal.innerText;
+// const previousDepositTotal = parseFloat(depositTotalText);
+
+// depositTotal.innerText = previousDepositTotal + depositAmount;
+
+// update balance ////
+
+/*  const balanceTotal = document.getElementById('balance-total');
+ const balanceTotalText = balanceTotal.innerText;
+ const previousBalanceTotal = parseFloat(balanceTotalText);
+balanceTotal.innerText = previousBalanceTotal + depositAmount;
+*/
+
 // Haandle with withdraw button///
 document.getElementById('withdraw-button').addEventListener('click', function () {
     // const withdrawInput = document.getElementById('withdraw-input');
